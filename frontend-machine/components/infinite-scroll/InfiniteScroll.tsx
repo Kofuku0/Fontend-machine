@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect } from "react";
 import Image from "next/image";
-import useInfiniteScroll from "../hooks/useInfiniteScroll";
+import useInfiniteScroll from "../../hooks/useInfiniteScroll";
 
 const LIMIT = 7;
 let PAGE = 1;
