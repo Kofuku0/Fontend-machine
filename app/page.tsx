@@ -4,12 +4,17 @@ import Image from "next/image";
 import InfiniteScroll from "@/frontend-machine/components/infinite-scroll";
 import VirtualisedList from "@/frontend-machine/components/virtualised-list";
 import Pagination from "@/frontend-machine/components/pagination";
+import ProgressBar from "@/frontend-machine/components/progress-bar";
 export default function HomePage() {
   return (
      <div>
       {/* <InfiniteScroll /> */}
       {/* <VirtualisedList /> */}
-      <Pagination />
+      {/* <Pagination /> */}
+      <div className="flex flex-col items-center justify-center gap-5">
+      <ProgressBar value={9} outofValue={10}  />
+      <ProgressBar loader={true}  />
+      </div>
      </div>
   );
 }
