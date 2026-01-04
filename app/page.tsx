@@ -5,16 +5,19 @@ import InfiniteScroll from "@/frontend-machine/components/infinite-scroll";
 import VirtualisedList from "@/frontend-machine/components/virtualised-list";
 import Pagination from "@/frontend-machine/components/pagination";
 import ProgressBar from "@/frontend-machine/components/progress-bar";
+import DebounceComponent from "@/frontend-machine/components/debounce";
 export default function HomePage() {
   return (
      <div>
       {/* <InfiniteScroll /> */}
       {/* <VirtualisedList /> */}
       {/* <Pagination /> */}
-      <div className="flex flex-col items-center justify-center gap-5">
+      {/* <div className="flex flex-col items-center justify-center gap-5">
       <ProgressBar value={9} outofValue={10}  />
       <ProgressBar loader={true}  />
-      </div>
+      </div> */}
+   <DebounceComponent />
+   
      </div>
   );
 }
