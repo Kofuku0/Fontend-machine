@@ -6,7 +6,8 @@ import React from "react";
 // import Pagination from "@/frontend-machine/components/pagination";
 // import ProgressBar from "@/frontend-machine/components/progress-bar";
 // import DebounceComponent from "@/frontend-machine/components/debounce";
-import Modal from "@/frontend-machine/components/modal";
+// import Modal from "@/frontend-machine/components/modal";
+import OTP from "@/frontend-machine/components/otp";
 export default function HomePage() {
   const [open,setOpen] = React.useState(false);
   return (
@@ -19,9 +20,9 @@ export default function HomePage() {
       <ProgressBar loader={true}  />
       </div> */}
    {/* <DebounceComponent /> */}
-   <button onClick={() => setOpen(true)}>Open Modal</button>
-   <Modal open={open} onClose={() => setOpen(false)} />
-   
+   {/* <button onClick={() => setOpen(true)}>Open Modal</button>
+   <Modal open={open} onClose={() => setOpen(false)} /> */}
+        <OTP/>
      </div>
   );
 }
