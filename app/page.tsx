@@ -7,7 +7,8 @@ import React from "react";
 // import ProgressBar from "@/frontend-machine/components/progress-bar";
 // import DebounceComponent from "@/frontend-machine/components/debounce";
 // import Modal from "@/frontend-machine/components/modal";
-import OTP from "@/frontend-machine/components/otp";
+// import OTP from "@/frontend-machine/components/otp";
+import Accordion from "@/frontend-machine/components/accordian";
 export default function HomePage() {
   const [open,setOpen] = React.useState(false);
   return (
@@ -22,7 +23,28 @@ export default function HomePage() {
    {/* <DebounceComponent /> */}
    {/* <button onClick={() => setOpen(true)}>Open Modal</button>
    <Modal open={open} onClose={() => setOpen(false)} /> */}
-        <OTP/>
+       <Accordion
+      sections={[
+        {
+          value: "html",
+          title: "HTML",
+          contents:
+            "The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser.",
+        },
+        {
+          value: "css",
+          title: "CSS",
+          contents:
+            "Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language such as HTML or XML.",
+        },
+        {
+          value: "javascript",
+          title: "JavaScript",
+          contents:
+            "JavaScript, often abbreviated as JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS.",
+        },
+      ]}
+    />
      </div>
   );
 }
