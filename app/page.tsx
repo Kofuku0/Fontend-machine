@@ -8,7 +8,8 @@ import React from "react";
 // import DebounceComponent from "@/frontend-machine/components/debounce";
 // import Modal from "@/frontend-machine/components/modal";
 import Form from '@/frontend-machine/components/form';
-import OTP from "@/frontend-machine/components/otp";
+// import OTP from "@/frontend-machine/components/otp";
+// import Accordion from "@/frontend-machine/components/accordian";
 export default function HomePage() {
   const [open,setOpen] = React.useState(false);
   return (
