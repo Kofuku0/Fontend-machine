@@ -7,6 +7,7 @@ import React from "react";
 // import ProgressBar from "@/frontend-machine/components/progress-bar";
 // import DebounceComponent from "@/frontend-machine/components/debounce";
 // import Modal from "@/frontend-machine/components/modal";
+import Form from '@/frontend-machine/components/form';
 import OTP from "@/frontend-machine/components/otp";
 export default function HomePage() {
   const [open,setOpen] = React.useState(false);
@@ -22,7 +23,9 @@ export default function HomePage() {
    {/* <DebounceComponent /> */}
    {/* <button onClick={() => setOpen(true)}>Open Modal</button>
    <Modal open={open} onClose={() => setOpen(false)} /> */}
-        <OTP/>
+     {/* <OTP/> */}
+     <Form/>
+      
      </div>
   );
 }
