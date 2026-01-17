@@ -10,9 +10,10 @@ import React from "react";
 // import Form from '@/frontend-machine/components/form';
 // import OTP from "@/frontend-machine/components/otp";
 // import Accordion from "@/frontend-machine/components/accordian";
-import Tabs from "@/frontend-machine/components/tabs";
+// import Tabs from "@/frontend-machine/components/tabs";
+import DataTable from "@/frontend-machine/components/data-table";
 export default function HomePage() {
-  const [open,setOpen] = React.useState(false);
+//   const [open,setOpen] = React.useState(false);
   return (
      <div>
       {/* <InfiniteScroll /> */}
@@ -26,8 +27,12 @@ export default function HomePage() {
    {/* <button onClick={() => setOpen(true)}>Open Modal</button>
    <Modal open={open} onClose={() => setOpen(false)} /> */}
      {/* <OTP/> */}
+  
+
      {/* <Form/> */}
-      <Tabs
+ 
+
+      {/* <Tabs
         items={[
           {
             value: 'html',
@@ -48,7 +53,9 @@ export default function HomePage() {
               'JavaScript, often abbreviated as JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS.',
           },
         ]}
-      />
+      /> */}
+      <DataTable/>
+ 
      </div>
   );
 }
