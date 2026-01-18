@@ -12,6 +12,37 @@ const columns = [
 
 const PAGE_SIZE = 5;
 
+type SortField = "id" | "name" | "age" | "occupation";
+type SortDirection = "asc" | "desc";
+
+function sortUsers(
+  userList: Array<User>,
+  field: SortField | null,
+  direction: SortDirection,
+) {
+  const usersClone = userList.slice();
+
+  switch (field) {
+    case "id":
+    case "age": {
+      return usersClone.sort((a, b) =>
+        direction == "asc" ? a[field] - b[field] : b[field] - a[field],
+      );
+    }
+    case "name":
+    case "occupation": {
+      return usersClone.sort((a, b) =>
+        direction == "asc"
+          ? a[field].localeCompare(b[field])
+          : b[field].localeCompare(a[field]),
+      );
+    }
+    default: {
+      return usersClone;
+    }
+  }
+}
+
 function paginatedUser(userList: Array<User>, page: number, pageSize: number) {
   const start = (page - 1) * pageSize;
   const end = start + pageSize;
@@ -25,8 +56,12 @@ export default function DataTable() {
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(PAGE_SIZE);
 
-  const { pageUsers, totalPages } = paginatedUser(users, page, pageSize);
 
+  const [sortField,setSortField] = useState<SortField|null>(null);
+  const [sortDirection,setSortDirection] = useState<SortDirection>('asc');
+
+   const sortedUsers = sortUsers(users,sortField,sortDirection);
+     const { pageUsers, totalPages } = paginatedUser(sortedUsers, page, pageSize);
   return (
     <div className="min-h-dvh w-full flex items-center justify-center text-black p-6">
       <div className="w-full max-w-4xl bg-white rounded-xl shadow-md p-6">
@@ -37,6 +72,22 @@ export default function DataTable() {
               <tr>
                 {columns.map(({ label, key }) => (
                   <th
+                      onClick={()=>{
+                          if(sortField !==key){
+                             setSortField(key);
+                             setSortDirection('asc');
+
+                          }else{
+                              setSortDirection((prev)=>{
+                                  if(prev=='asc'){
+                                      return 'desc'
+                                  }else{
+                                     return 'asc'
+                                  }
+                              })
+                          }
+                          setPage(1);
+                      }}
                     key={key}
                     className="border px-4 py-3 font-semibold text-gray-700"
                   >
