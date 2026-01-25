@@ -1,15 +1,7 @@
 import { collectMeta } from "next/dist/build/utils";
 import React, { useState } from "react";
 
-interface sectionProps {
-  title: string;
-  value: string;
-  content: string;
-}
-
-interface sectionsProps {
-  sections: sectionProps[];
-}
+import { sectionsProps } from "@/frontend-machine/types/accordian-types";
 export default function AccordianII({ sections }: sectionsProps) {
   const [openSection, setOpenSection] = useState(new Set<string>());
   return (
