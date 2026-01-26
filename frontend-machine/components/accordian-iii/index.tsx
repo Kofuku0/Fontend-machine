@@ -1,6 +1,6 @@
 import { useId, useState } from "react";
 import { sectionsProps, sectionProps } from "@/frontend-machine/types/accordian-types";
-
+import useMounted from "@/frontend-machine/hooks/useMounted";
 function getAccordionHeaderId(accordionId: string, value: string) {
   return accordionId + "-header-" + value;
 }
@@ -12,7 +12,12 @@ function getAccordionPanelId(accordionId: string, value: string) {
 export default function AccordionIII({ sections }: sectionsProps) {
   const accordionId = useId();
   const [openSections, setOpenSections] = useState<Set<string>>(new Set());
+  const isMounted = useMounted();
 
+  if (!isMounted) {
+    return null;
+  }
+  
   return (
     <div className="w-full max-w-2xl space-y-3 rounded-2xl bg-white p-4 shadow-sm ring-1 ring-gray-200">
       {sections.map(({ value, title, content }: sectionProps) => {
@@ -69,7 +74,7 @@ export default function AccordionIII({ sections }: sectionsProps) {
             >
               {content}
             </div>
-          </div>
+          </div> 
         );
       })}
     </div>

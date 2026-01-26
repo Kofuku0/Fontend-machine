@@ -17,6 +17,7 @@ function Hand({height=120,width=6,angle=20}){
 }
 
 function useCurrentDate(){
+  
        const [date,setDate] = useState(new Date());
        
        // kick off the timer
@@ -38,20 +39,23 @@ function padTwoDgits(num:number){
 
 export default function Index() {
   // ✅ Temporary fixed values (later connect to real time)
-  const mounted = useMounted();
+
   const date = useCurrentDate();
   const hours = date.getHours();
+  console.log(hours,"hours");
+
   const minutes = date.getMinutes();
   console.log(minutes,"minutes")
   const seconds = date.getSeconds();
-  console.log(seconds,"seconds")
-
-  let hoursAngle = hours %12;
+  let secondsAngle = seconds / 60;
+   let minutesAngle = (minutes+secondsAngle);
+   
+  let hoursAngle = (hours+(minutesAngle/60)) %12;
  
   console.log(hoursAngle,"hoursAngle")
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-100">
-      <div className="relative h-[500px] w-[500px] rounded-full border-4 border-black bg-white">
+      <div className="relative h-125 w-125 rounded-full border-4 border-black bg-white">
         {/* ✅ center dot */}
         <div className="absolute left-1/2 top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-black" />
       </div>
@@ -69,8 +73,11 @@ export default function Index() {
           })}
             {/* ✅ Hands (put inside clock) */}
         <Hand height={120} width={10} angle={hoursAngle*30} />
-        <Hand height={160} width={6} angle={minutes*6}  />
+        <Hand height={160} width={6} angle={minutesAngle*6}  />
         <Hand height={190} width={3} angle={seconds*6} />
     </div>
   );
 }
+
+
+
