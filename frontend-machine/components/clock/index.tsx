@@ -38,17 +38,12 @@ function padTwoDgits(num:number){
 
 export default function Index() {
   // ✅ Temporary fixed values (later connect to real time)
-  const mounted = useMounted();
+  const mounted = useMounted();  
   const date = useCurrentDate();
   const hours = date.getHours();
   const minutes = date.getMinutes();
-  console.log(minutes,"minutes")
   const seconds = date.getSeconds();
-  console.log(seconds,"seconds")
-
   let hoursAngle = hours %12;
- 
-  console.log(hoursAngle,"hoursAngle")
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-100">
       <div className="relative h-[500px] w-[500px] rounded-full border-4 border-black bg-white">

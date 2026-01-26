@@ -13,12 +13,10 @@ interface sectionProps{
 
 export default function Accordion({sections}:sectionProps) {
   const [openSections, setOpenSections] = useState(new Set());
-
   return (
     <div className="flex w-full p-10 flex-col">
       {sections.map(({ value, title, contents }) => {
         const isExpanded = openSections.has(value);
-
         return (
           <div
             key={value}
