@@ -17,6 +17,7 @@ function Hand({height=120,width=6,angle=20}){
 }
 
 function useCurrentDate(){
+  
        const [date,setDate] = useState(new Date());
        
        // kick off the timer
@@ -50,7 +51,7 @@ export default function Index() {
   let hoursAngle = (hours+minutesAngle) %12;
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-100">
-      <div className="relative h-[500px] w-[500px] rounded-full border-4 border-black bg-white">
+      <div className="relative h-125 w-125 rounded-full border-4 border-black bg-white">
         {/* ✅ center dot */}
         <div className="absolute left-1/2 top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-black" />
       </div>
@@ -73,3 +74,6 @@ export default function Index() {
     </div>
   );
 }
+
+
+
