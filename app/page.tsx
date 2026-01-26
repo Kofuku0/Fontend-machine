@@ -13,7 +13,8 @@ import React from "react";
 // import Tabs from "@/frontend-machine/components/tabs";
 // import DataTable from "@/frontend-machine/components/data-table";
 // import AccordianII from "@/frontend-machine/components/accordian-ii";
-import AccordionIII from "@/frontend-machine/components/accordian-iii";
+// import AccordionIII from "@/frontend-machine/components/accordian-iii";
+import Clock from '@/frontend-machine/components/clock'
 export default function HomePage() {
 //   const [open,setOpen] = React.useState(false);
 
@@ -73,7 +74,7 @@ export default function HomePage() {
         content: 'JavaScript, often abbreviated as JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS.'
        }]}
     /> */}
-       <AccordionIII
+       {/* <AccordionIII
        sections = {[{
         title: 'HTML',
         value :'html',
@@ -87,7 +88,9 @@ export default function HomePage() {
         value :'javascript',
         content: 'JavaScript, often abbreviated as JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS.'
        }]}
-    />
+    /> */}
+
+    <Clock/>
      </div>
   );
 }
