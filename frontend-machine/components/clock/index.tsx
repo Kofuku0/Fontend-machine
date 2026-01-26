@@ -41,9 +41,13 @@ export default function Index() {
   const mounted = useMounted();  
   const date = useCurrentDate();
   const hours = date.getHours();
+  
   const minutes = date.getMinutes();
+ 
+  const minutesAngle = minutes /60;
   const seconds = date.getSeconds();
-  let hoursAngle = hours %12;
+   const minutesTotalAngle = (minutes+seconds/60);
+  let hoursAngle = (hours+minutesAngle) %12;
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-100">
       <div className="relative h-[500px] w-[500px] rounded-full border-4 border-black bg-white">
@@ -64,7 +68,7 @@ export default function Index() {
           })}
             {/* ✅ Hands (put inside clock) */}
         <Hand height={120} width={10} angle={hoursAngle*30} />
-        <Hand height={160} width={6} angle={minutes*6}  />
+        <Hand height={160} width={6} angle={minutesTotalAngle*6}  />
         <Hand height={190} width={3} angle={seconds*6} />
     </div>
   );
