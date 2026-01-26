@@ -14,7 +14,9 @@ import React from "react";
 // import DataTable from "@/frontend-machine/components/data-table";
 // import AccordianII from "@/frontend-machine/components/accordian-ii";
 // import AccordionIII from "@/frontend-machine/components/accordian-iii";
+import ProgressDemo from "@/frontend-machine/components/progress-bar";
 import Clock from '@/frontend-machine/components/clock'
+import ProgressBarGenerator from '@/frontend-machine/components/progress-bars'
 export default function HomePage() {
 //   const [open,setOpen] = React.useState(false);
 
@@ -27,6 +29,7 @@ export default function HomePage() {
       <ProgressBar value={9} outofValue={10}  />
       <ProgressBar loader={true}  />
       </div> */}
+      {/* <ProgressDemo /> */}
    {/* <DebounceComponent /> */}
    {/* <button onClick={() => setOpen(true)}>Open Modal</button>
    <Modal open={open} onClose={() => setOpen(false)} /> */}
@@ -90,7 +93,8 @@ export default function HomePage() {
        }]}
     /> */}
 
-    <Clock/>
+    {/* <Clock/> */}
+    <ProgressBarGenerator/>
      </div>
   );
 }

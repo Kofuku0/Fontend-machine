@@ -78,7 +78,7 @@ function ClockImpl({ hours, minutes, seconds, size }: { hours: number; minutes: 
       className="clock"
       dateTime={dateTimeDisplay}
       style={{
-        '--size': `${size}px`,
+        // '--size': `${size}px`,
       }}>
       <Hand height={0.5} angle={hourAngle} width={3} />
       <Hand height={0.9} angle={minutesAngle} width={2} />
