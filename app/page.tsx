@@ -14,14 +14,15 @@ import React from "react";
 // import DataTable from "@/frontend-machine/components/data-table";
 // import AccordianII from "@/frontend-machine/components/accordian-ii";
 // import AccordionIII from "@/frontend-machine/components/accordian-iii";
-import ProgressDemo from "@/frontend-machine/components/progress-bar";
-import Clock from '@/frontend-machine/components/clock'
-import ProgressBarGenerator from '@/frontend-machine/components/progress-bars'
+// import ProgressDemo from "@/frontend-machine/components/progress-bar";
+// import Clock from '@/frontend-machine/components/clock'
+// import ProgressBarGenerator from '@/frontend-machine/components/progress-bars'
+import DiceRoller from '@/frontend-machine/components/dice-roller';
 export default function HomePage() {
 //   const [open,setOpen] = React.useState(false);
 
   return (
-     <div>
+     <div className="bg-white h-dvh w-dvw">
       {/* <InfiniteScroll /> */}
       {/* <VirtualisedList /> */}
       {/* <Pagination /> */}
@@ -94,7 +95,8 @@ export default function HomePage() {
     /> */}
 
     {/* <Clock/> */}
-    <ProgressBarGenerator/>
+    {/* <ProgressBarGenerator/> */}
+    <DiceRoller/>
      </div>
   );
 }
