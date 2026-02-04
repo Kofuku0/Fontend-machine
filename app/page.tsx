@@ -1,5 +1,5 @@
 'use client';
-import React from "react";
+
 // import Image from "next/image";
 // import InfiniteScroll from "@/frontend-machine/components/infinite-scroll";
 // import VirtualisedList from "@/frontend-machine/components/virtualised-list";
@@ -17,7 +17,10 @@ import React from "react";
 // import ProgressDemo from "@/frontend-machine/components/progress-bar";
 // import Clock from '@/frontend-machine/components/clock'
 // import ProgressBarGenerator from '@/frontend-machine/components/progress-bars'
-import DiceRoller from '@/frontend-machine/components/dice-roller';
+// import DiceRoller from '@/frontend-machine/components/dice-roller';
+// import Todo from '@/frontend-machine/components/todo'
+import HorizontalSpinner from '@/frontend-machine/components/horizontal-spinner';
+
 export default function HomePage() {
 //   const [open,setOpen] = React.useState(false);
 
@@ -96,7 +99,13 @@ export default function HomePage() {
 
     {/* <Clock/> */}
     {/* <ProgressBarGenerator/> */}
-    <DiceRoller/>
+    {/* <DiceRoller/> */}
+    {/* <Todo/>
+     */}
+     <div className='w-full flex items-center justify-center'>
+      <HorizontalSpinner/>
+     </div>
+     
      </div>
   );
 }
