@@ -20,8 +20,9 @@
 // import DiceRoller from '@/frontend-machine/components/dice-roller';
 // import Todo from '@/frontend-machine/components/todo'
 // import HorizontalSpinner from '@/frontend-machine/components/horizontal-spinner';
-import SwitchCase from '@/frontend-machine/components/switch-case';
+// import SwitchCase from '@/frontend-machine/components/switch-case';
 
+import Chat from "@/frontend-machine/components/chat";
 export default function HomePage() {
 //   const [open,setOpen] = React.useState(false);
 
@@ -108,7 +109,9 @@ export default function HomePage() {
      </div>
       */}
 
-      <SwitchCase/>
+      {/* <SwitchCase/> */}
+
+  <Chat/>
      </div>
   );
 }
