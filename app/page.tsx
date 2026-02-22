@@ -22,7 +22,9 @@
 // import HorizontalSpinner from '@/frontend-machine/components/horizontal-spinner';
 // import SwitchCase from '@/frontend-machine/components/switch-case';
 
-import Chat from "@/frontend-machine/components/chat";
+// import Chat from "@/frontend-machine/components/chat";
+// import Parent from '@/frontend-machine/react-performance/performance-1'
+import RenderTree from '@/frontend-machine/components/render-a-tree';
 export default function HomePage() {
 //   const [open,setOpen] = React.useState(false);
 
@@ -111,7 +113,12 @@ export default function HomePage() {
 
       {/* <SwitchCase/> */}
 
-  <Chat/>
+  {/* <Chat/>
+   */}
+
+   {/* <Parent/>
+    */}
+    <RenderTree/>
      </div>
   );
 }
