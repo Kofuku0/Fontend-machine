@@ -24,10 +24,26 @@
 
 // import Chat from "@/frontend-machine/components/chat";
 // import Parent from '@/frontend-machine/react-performance/performance-1'
-import RenderTree from '@/frontend-machine/components/render-a-tree';
+// import RenderTree from '@/frontend-machine/components/render-a-tree';
+import TypeAhead from '@/frontend-machine/components/type-ahead';
 export default function HomePage() {
 //   const [open,setOpen] = React.useState(false);
 
+
+
+const staticData = [
+   'apple',
+   'banana',
+   'berrl',
+   'orange',
+   'grape',
+   'mango',
+   'melon',
+   'berry',
+   'peach',
+   'cherry',
+   'plum'
+]
   return (
      <div className="bg-white h-dvh w-dvw">
       {/* <InfiniteScroll /> */}
@@ -118,7 +134,10 @@ export default function HomePage() {
 
    {/* <Parent/>
     */}
-    <RenderTree/>
+    {/* <RenderTree/>
+     */}
+
+    <TypeAhead/>
      </div>
   );
 }

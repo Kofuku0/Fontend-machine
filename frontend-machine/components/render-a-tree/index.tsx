@@ -93,7 +93,7 @@ const RenderTree = ({data}:any)=>{
     const hasChildren = data?.children.length>0;
 
     return (
-          <div key ={data.name} className="min-h-10 h-auto  flex flex-col justify-center relative items-start pl-5  bg-blue-200 text-white   rounded-xl">
+          <div  className="min-h-10 h-auto  flex flex-col justify-center relative items-start pl-5  bg-blue-200 text-white   rounded-xl">
             {data.name}
            {/* {hasChildren && <div className="absolute right-5 top-0">V</div>} */}
                {hasChildren && (
