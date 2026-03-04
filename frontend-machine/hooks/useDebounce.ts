@@ -1,6 +1,11 @@
 import { useEffect, useState, useRef } from "react";
 
-export default function useDebounce({ searchTerm, duration }: any) {
+
+interface DebounceProps{
+   searchTerm:string;
+   duration:number;
+}
+export default function useDebounce({ searchTerm,duration}: DebounceProps) {
   const [debouncedTerm, setDebouncedTerm] = useState(searchTerm);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 

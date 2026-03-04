@@ -1,6 +1,6 @@
 
 
-import { useRef,useEffect, use } from "react"
+import { useRef,useEffect } from "react"
 type useInfiniteScrollProps= {
    setPage: React.Dispatch<React.SetStateAction<number>>;
    setHasMore:React.Dispatch<React.SetStateAction<boolean>>;
@@ -41,6 +41,6 @@ export default function useInfiniteScroll(
   },[dataLength])
     
 
-  return {lastItemRef};
+  return lastItemRef;
 
 }

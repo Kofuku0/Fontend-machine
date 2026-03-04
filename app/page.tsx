@@ -1,5 +1,6 @@
 'use client';
 import React,{useState,useEffect,useRef} from "react";
+
 // import Image from "next/image";
 // import InfiniteScroll from "@/frontend-machine/components/infinite-scroll";
 // import VirtualisedList from "@/frontend-machine/components/virtualised-list";
@@ -19,39 +20,38 @@ import Clock from '@/frontend-machine/components/clock'
 import ProgressBarGenerator from '@/frontend-machine/components/progress-bars';
 // import AutoComplete from "@/frontend-machine/components/practise-component/autocomplete";
 import Pagination from "@/frontend-machine/components/practise-component/pagination";
+// import ProgressDemo from "@/frontend-machine/components/progress-bar";
+// import Clock from '@/frontend-machine/components/clock'
+// import ProgressBarGenerator from '@/frontend-machine/components/progress-bars'
+// import DiceRoller from '@/frontend-machine/components/dice-roller';
+// import Todo from '@/frontend-machine/components/todo'
+// import HorizontalSpinner from '@/frontend-machine/components/horizontal-spinner';
+// import SwitchCase from '@/frontend-machine/components/switch-case';
+
+// import Chat from "@/frontend-machine/components/chat";
+// import Parent from '@/frontend-machine/react-performance/performance-1'
+// import RenderTree from '@/frontend-machine/components/render-a-tree';
+// import TypeAhead from '@/frontend-machine/components/type-ahead';
+// import Pagination from "@/frontend-machine/components/practise-component/pagination";
 export default function HomePage() {
 //   const [open,setOpen] = React.useState(false);
 
 
-// for pratise pagination 
-const [currentPage,setCurrentPage] = useState(1);
-const [data,setData] = useState<any[]>([]);
-const totalCountRef = useRef<number>(0);
-const limit = 6;
-const handlePageChange = (page:number)=>{
-      setCurrentPage(page);
-}
-
-useEffect(()=>{
-
-  const fetchData = async()=>{
-      try{
-      const res =await fetch(`https://dummyjson.com/products?page=${currentPage}&limit=${limit}`);
-      const data = await  res.json();
-      setData(data.products);
-      totalCountRef.current = data.total;
-
-    }catch(err){
-       console.log(err,"errror")
-    }
-  }
-
-  fetchData();
-    
-},[currentPage]);
-
+const staticData = [
+   'apple',
+   'banana',
+   'berrl',
+   'orange',
+   'grape',
+   'mango',
+   'melon',
+   'berry',
+   'peach',
+   'cherry',
+   'plum'
+]
   return (
-     <div>
+     <div className="bg-white h-dvh w-dvw">
       {/* <InfiniteScroll /> */}
       {/* <VirtualisedList /> */}
       {/* <Pagination /> */}
@@ -126,7 +126,26 @@ useEffect(()=>{
     {/* <Clock/> */}
     {/* <ProgressBarGenerator/> */}
     {/* <AutoComplete/> */}
-    <Pagination data= {data} totalCount = {totalCountRef.current} currentPage={currentPage} windowSize={limit} handlePageChange={handlePageChange}/>
+    {/* <Pagination data= {data} totalCount = {totalCountRef.current} currentPage={currentPage} windowSize={limit} handlePageChange={handlePageChange}/> */}
+    {/* <DiceRoller/> */}
+    {/* <Todo/>
+     */}
+     {/* <div className='w-full flex items-center justify-center'>
+      <HorizontalSpinner/>
+     </div>
+      */}
+
+      {/* <SwitchCase/> */}
+
+  {/* <Chat/>
+   */}
+
+   {/* <Parent/>
+    */}
+    {/* <RenderTree/>
+     */}
+
+    {/* <TypeAhead/> */}
      </div>
   );
 }
