@@ -1,5 +1,5 @@
 'use client';
-import React from "react";
+import React,{useState,useEffect,useRef} from "react";
 // import Image from "next/image";
 // import InfiniteScroll from "@/frontend-machine/components/infinite-scroll";
 // import VirtualisedList from "@/frontend-machine/components/virtualised-list";
@@ -16,9 +16,39 @@ import React from "react";
 // import AccordionIII from "@/frontend-machine/components/accordian-iii";
 import ProgressDemo from "@/frontend-machine/components/progress-bar";
 import Clock from '@/frontend-machine/components/clock'
-import ProgressBarGenerator from '@/frontend-machine/components/progress-bars'
+import ProgressBarGenerator from '@/frontend-machine/components/progress-bars';
+// import AutoComplete from "@/frontend-machine/components/practise-component/autocomplete";
+import Pagination from "@/frontend-machine/components/practise-component/pagination";
 export default function HomePage() {
 //   const [open,setOpen] = React.useState(false);
+
+
+// for pratise pagination 
+const [currentPage,setCurrentPage] = useState(1);
+const [data,setData] = useState<any[]>([]);
+const totalCountRef = useRef<number>(0);
+const limit = 6;
+const handlePageChange = (page:number)=>{
+      setCurrentPage(page);
+}
+
+useEffect(()=>{
+
+  const fetchData = async()=>{
+      try{
+      const res =await fetch(`https://dummyjson.com/products?page=${currentPage}&limit=${limit}`);
+      const data = await  res.json();
+      setData(data.products);
+      totalCountRef.current = data.total;
+
+    }catch(err){
+       console.log(err,"errror")
+    }
+  }
+
+  fetchData();
+    
+},[currentPage]);
 
   return (
      <div>
@@ -94,7 +124,9 @@ export default function HomePage() {
     /> */}
 
     {/* <Clock/> */}
-    <ProgressBarGenerator/>
+    {/* <ProgressBarGenerator/> */}
+    {/* <AutoComplete/> */}
+    <Pagination data= {data} totalCount = {totalCountRef.current} currentPage={currentPage} windowSize={limit} handlePageChange={handlePageChange}/>
      </div>
   );
 }
